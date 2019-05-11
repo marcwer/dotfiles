@@ -1,0 +1,22 @@
+# ls
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -lhF'
+alias la='ls -lahF'
+alias l='ls -CF'
+
+# color output for grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# preserve user environment with sudo
+alias sudo='sudo -E'
+
+# calcurse
+alias calcurse='calcurse -D $HOME/sync/data/calcurse'
+
+# todo.txt
+alias t='todo.sh'
+
+# taskbook
+alias tb='taskbook'
