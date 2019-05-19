@@ -1,0 +1,60 @@
+" Allgemein
+
+set noswapfile       " keine Auslagerungsdatei
+set nocompatible     " forget Vi compat
+syntax enable        " selbsterklärend :-)
+set tabstop=4        " <TAB> Zeichen wird als 4 Leerzeichen dargestellt
+set softtabstop=4    " <TAB> wird beim Navigieren wie 4 Leerzeichen behandelt
+set shiftwidth=4     " 4 Leerzeichen pro Einrückung
+set expandtab        " <TAB> wird biem Schreiben durch 4 Leerzeichen ersetzt
+set tw=79            " Zeilenbreite auf max 79 Zeichen setzen
+set path+=**         " search subdirectories recursively
+set wildmenu         " nice menu for tab-completion
+filetype plugin on   " plugins aktivieren
+
+" Plugins
+
+call plug#begin('~/.vim/plugin_stuff')
+
+Plug 'vimwiki/vimwiki'
+Plug 'plasticboy/vim-markdown'
+
+call plug#end()
+
+" Aussehen
+
+set background=light
+colorscheme desert      " Farbschema
+set number              " zeigt die Zeilennummer
+set showcmd             " zeigt den letzten Befehl
+"set cursorline         " zeigt die aktuelle Zeile
+filetype indent on      " Dateitypenabhängige Einrückung
+set showmatch           " Hervorhebung von [{()}]
+
+
+" Suchen
+set incsearch        " Suchen während der Eingabe
+set hlsearch         " Fundstellen hervorheben
+
+" Keybindings
+nnoremap t <C-]>
+nnoremap <SPACE> <S-/>
+nnoremap ö :
+
+
+
+" Vimwiki
+
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_list = [{'path': '$HOME/sync/data/vimwiki', 'ext': '.wiki'},
+                    \ {'path': '$HOME/sync/data/backwiki', 'ext': '.wiki'}]
+
+" netrw
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+let g:netrw_browse_split = 4
+
+" markdown
+let g:vim_markdown_folding_disabled = 1
+
