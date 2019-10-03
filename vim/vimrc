@@ -45,10 +45,11 @@ nnoremap ö :
 
 " Vimwiki
 
-let g:vimwiki_hl_headers = 1
-let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_list = [{'path': '$HOME/sync/data/vimwiki', 'ext': '.wiki'},
                     \ {'path': '$HOME/sync/data/backwiki', 'ext': '.wiki'}]
+
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_hl_cb_checked = 1
 
 " netrw
 let g:netrw_banner = 0
@@ -58,3 +59,5 @@ let g:netrw_browse_split = 4
 " markdown
 let g:vim_markdown_folding_disabled = 1
 
+" Pascal settings
+au BufReadPost,BufNewFile *.pas setlocal sw=2 ts=2 softtabstop=2
