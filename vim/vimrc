@@ -18,13 +18,14 @@ call plug#begin('~/.vim/plugin_stuff')
 
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
 " Aussehen
 
 set background=light
-colorscheme desert      " Farbschema
+colorscheme elflord     " Farbschema
 set number              " zeigt die Zeilennummer
 set showcmd             " zeigt den letzten Befehl
 "set cursorline         " zeigt die aktuelle Zeile
@@ -61,3 +62,6 @@ let g:vim_markdown_folding_disabled = 1
 
 " Pascal settings
 au BufReadPost,BufNewFile *.pas setlocal sw=2 ts=2 softtabstop=2
+
+" Align GitHub-flavored Markdown tables
+au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
