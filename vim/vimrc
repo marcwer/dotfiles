@@ -2,6 +2,7 @@
 
 set noswapfile       " keine Auslagerungsdatei
 set noundofile       " keine Undo-Datei
+set nobackup         " keine Backupdatei
 set nocompatible     " forget Vi compat
 syntax enable        " selbsterklärend :-)
 set tabstop=4        " <TAB> Zeichen wird als 4 Leerzeichen dargestellt
