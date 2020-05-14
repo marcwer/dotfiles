@@ -182,12 +182,12 @@ bindsym $mod+Pause mode "$mode_system"
 
 ## Manual management of external displays
 # Set the shortcuts and what they do
-set $mode_display Ext Screen (v) LVDS ON, (h) HDMI ON, (x) LVDS OFF, (y) HDMI OFF
+set $mode_display Ext Screen (v) LVDS ON, (h) DP ON, (x) LVDS OFF, (y) DP OFF
 mode "$mode_display" {
-    bindsym v exec --no-startup-id xrandr --output LVDS-1 --auto --right-of LVDS1, mode "default"
-    bindsym h exec --no-startup-id xrandr --output HDMI-3 --auto --right-of LVDS1, mode "default"
-    bindsym x exec --no-startup-id xrandr --output LVDS-1 --auto --off, mode "default"
-    bindsym y exec --no-startup-id xrandr --output HDMI-3 --auto --off, mode "default"
+    bindsym v exec --no-startup-id xrandr --output LVDS1 --auto
+    bindsym h exec --no-startup-id xrandr --output DP1 --auto 
+    bindsym x exec --no-startup-id xrandr --output LVDS1 --auto --off
+    bindsym y exec --no-startup-id xrandr --output DP1 --auto --off
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
