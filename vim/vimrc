@@ -21,13 +21,14 @@ call plug#begin('~/.vim/plugin_stuff')
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
 " Aussehen
 
 set background=light
-colorscheme elflord     " Farbschema
+colorscheme morning     " Farbschema
 set number              " zeigt die Zeilennummer
 set showcmd             " zeigt den letzten Befehl
 "set cursorline         " zeigt die aktuelle Zeile
@@ -44,6 +45,7 @@ nnoremap t <C-]>
 nnoremap <SPACE> <S-/>
 nnoremap ö :
 
+map <C-n> :NERDTreeToggle<CR>
 
 
 " Vimwiki
@@ -53,6 +55,11 @@ let g:vimwiki_list = [{'path': '$HOME/sync/data/vimwiki', 'ext': '.wiki'},
 
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
+
+" NERDTree
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
 
 " netrw
 let g:netrw_banner = 0
