@@ -50,11 +50,10 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Vimwiki
 
-let g:vimwiki_list = [{'path': '$HOME/sync/data/vimwiki', 'ext': '.wiki'},
-                    \ {'path': '$HOME/sync/data/backwiki', 'ext': '.wiki'}]
-
+let g:vimwiki_list = [{'path': '$HOME/sync/data/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
+let automatic_nested_syntaxes = 1
 
 " NERDTree
 let g:NERDTreeDirArrowExpandable = '▸'
