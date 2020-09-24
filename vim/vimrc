@@ -1,10 +1,11 @@
 " Allgemein
 
+set background=dark
 set noswapfile       " keine Auslagerungsdatei
 set noundofile       " keine Undo-Datei
 set nobackup         " keine Backupdatei
 set nocompatible     " forget Vi compat
-syntax enable        " selbsterklärend :-)
+syntax on        " selbsterklärend :-)
 set tabstop=4        " <TAB> Zeichen wird als 4 Leerzeichen dargestellt
 set softtabstop=4    " <TAB> wird beim Navigieren wie 4 Leerzeichen behandelt
 set shiftwidth=4     " 4 Leerzeichen pro Einrückung
@@ -25,10 +26,13 @@ Plug 'preservim/nerdtree'
 
 call plug#end()
 
+" open manpage in a new window with e.g :Man bash
+:runtime ftplugin/man.vim
+
+
 " Aussehen
 
-set background=light
-colorscheme morning     " Farbschema
+colorscheme elflord     " Farbschema
 set number              " zeigt die Zeilennummer
 set showcmd             " zeigt den letzten Befehl
 "set cursorline         " zeigt die aktuelle Zeile
@@ -41,7 +45,7 @@ set incsearch        " Suchen während der Eingabe
 set hlsearch         " Fundstellen hervorheben
 
 " Keybindings
-nnoremap t <C-]>
+" nnoremap t <C-]>
 nnoremap <SPACE> <S-/>
 nnoremap ö :
 
@@ -50,14 +54,16 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Vimwiki
 
-let g:vimwiki_list = [{'path': '$HOME/sync/data/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '$HOME/mnt/homedir/data/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_global_ext = 0 " don't consider every md-file as a wiki
 let automatic_nested_syntaxes = 1
 
 " NERDTree
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = 'v'
 
 
 " netrw
