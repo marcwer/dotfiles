@@ -23,6 +23,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug 'preservim/nerdtree'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -54,7 +55,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Vimwiki
 
-let g:vimwiki_list = [{'path': '$HOME/mnt/homedir/data/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '$HOME/sync/data/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
