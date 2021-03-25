@@ -1,0 +1,10 @@
+# Newsboat Configuration
+
+# set browser
+browser /usr/bin/firefox
+
+# set colorscheme
+include /usr/share/doc/newsboat/contrib/colorschemes/nord
+
+# watch video with mpv, type: ,y
+macro y set browser "mpv %u" ; open-in-browser ; set browser "/usr/bin/firefox %u"
