@@ -1,82 +1,66 @@
-" Allgemein
-
-set background=dark
-set noswapfile       " keine Auslagerungsdatei
-set noundofile       " keine Undo-Datei
-set nobackup         " keine Backupdatei
-set nocompatible     " forget Vi compat
-syntax on        " selbsterklärend :-)
-set tabstop=4        " <TAB> Zeichen wird als 4 Leerzeichen dargestellt
-set softtabstop=4    " <TAB> wird beim Navigieren wie 4 Leerzeichen behandelt
-set shiftwidth=4     " 4 Leerzeichen pro Einrückung
-set expandtab        " <TAB> wird biem Schreiben durch 4 Leerzeichen ersetzt
-set tw=79            " Zeilenbreite auf max 79 Zeichen setzen
-set path+=**         " search subdirectories recursively
-set wildmenu         " nice menu for tab-completion
-filetype plugin on   " plugins aktivieren
+" General
+set noswapfile
+set noundofile
+set nobackup
+set nocompatible
+syntax on
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set tw=79
+set path+=**
+set wildmenu
+filetype plugin on
 
 " Plugins
-
 call plug#begin('~/.vim/plugin_stuff')
 
-Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug 'preservim/nerdtree'
 Plug 'arcticicestudio/nord-vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 
-" open manpage in a new window with e.g :Man bash
-:runtime ftplugin/man.vim
+" Appearance
+set background=dark
+set termguicolors
+colorscheme nord
+set number
+set showcmd
+filetype indent on
+set showmatch
 
+" searching
+set incsearch
+set hlsearch
 
-" Aussehen
-
-colorscheme elflord     " Farbschema
-set number              " zeigt die Zeilennummer
-set showcmd             " zeigt den letzten Befehl
-"set cursorline         " zeigt die aktuelle Zeile
-filetype indent on      " Dateitypenabhängige Einrückung
-set showmatch           " Hervorhebung von [{()}]
-
-
-" Suchen
-set incsearch        " Suchen während der Eingabe
-set hlsearch         " Fundstellen hervorheben
-
-" Keybindings
-" nnoremap t <C-]>
+" keybindings
+nnoremap t <C-]>
 nnoremap <SPACE> <S-/>
 nnoremap ö :
-
+inoremap jk <ESC>
 map <C-n> :NERDTreeToggle<CR>
-
-
-" Vimwiki
-
-let g:vimwiki_list = [{'path': '$HOME/sync/data/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-
-let g:vimwiki_hl_headers = 1
-let g:vimwiki_hl_cb_checked = 1
-let g:vimwiki_global_ext = 0 " don't consider every md-file as a wiki
-let automatic_nested_syntaxes = 1
 
 " NERDTree
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = 'v'
-
 
 " netrw
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:netrw_browse_split = 4
 
-" markdown
-let g:vim_markdown_folding_disabled = 1
-
-" Pascal settings
-au BufReadPost,BufNewFile *.pas setlocal sw=2 ts=2 softtabstop=2
-
-" Align GitHub-flavored Markdown tables
+" align GitHub-flavored Markdown tables
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
+
+" grep trough notes
+command! -nargs=1 Ngrep vimgrep "<args>" $NOTES_DIR/**/*.md
+nnoremap <leader>nn :Ngrep
+
+" open quickfix list in vertical pane
+command! Vlist botright vertical copen | vertical resize 50
+nnoremap <leader>v :Vlist<CR>
