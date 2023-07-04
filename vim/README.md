@@ -1,7 +1,7 @@
 # Installation
 
 copy `vimrc` to `~/.vimrc`
-copy `ftplugin` to `~/vim`
+copy `ftplugin` to `~/.vim`
 
 ## Plugins
 
