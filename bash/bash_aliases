@@ -1,8 +1,7 @@
 # ls
-alias ls='ls --color=auto --group-directories-first'
-alias ll='ls -lhF'
-alias la='ls -lahF'
-alias l='ls -CF'
+alias ls='exa --group-directories-first'
+alias ll='ls -lF'
+alias la='ls -laF'
 
 # color output for grep
 alias grep='grep --color=auto'
@@ -16,7 +15,7 @@ alias sudo='sudo -E'
 alias calcurse='calcurse -D $HOME/sync/data/calcurse'
 
 # todo.txt
-alias t='todo.sh'
+alias t='todo.sh -d ~/.config/todo/config'
 
 # taskbook
 alias tb='taskbook'
