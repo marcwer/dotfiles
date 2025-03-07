@@ -14,14 +14,18 @@ set wildmenu
 filetype plugin on
 
 " Plugins
-call plug#begin('~/.vim/plugin_stuff')
+call plug#begin()
 
+Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug 'preservim/nerdtree'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'michal-h21/vim-zettel'
 
 call plug#end()
 
@@ -44,6 +48,7 @@ nnoremap <SPACE> <S-/>
 nnoremap ö :
 inoremap jk <ESC>
 map <C-n> :NERDTreeToggle<CR>
+noremap <F12> :vertical belowright terminal<CR>
 
 " NERDTree
 let g:NERDTreeDirArrowExpandable = '>'
@@ -64,3 +69,19 @@ nnoremap <leader>nn :Ngrep
 " open quickfix list in vertical pane
 command! Vlist botright vertical copen | vertical resize 50
 nnoremap <leader>v :Vlist<CR>
+
+" using fzf to find notes
+nnoremap 'n :Files $NOTES_DIR<CR>
+
+" Settings for Vimwiki and vim-zettel
+let g:vimwiki_list = [{'path':'~/zk', 'ext':'.md', 'syntax':'markdown', 'links_space_char':'-'}]
+let g:zettel_format = "%y%m%d-%H%M-%title"
+
+" include .md extension in wiki-links
+let g:vimwiki_markdown_link_ext = 1 
+
+" searching
+let g:nv_search_paths = ['~/zk']
+
+" zettelkasten key mapping
+nnoremap <leader>zn :ZettelNew<space>
