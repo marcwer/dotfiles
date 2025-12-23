@@ -1,0 +1,21 @@
+# kanshi config
+
+output "Iiyama North America PL2792Q 1216730912519" {
+    scale 1.25
+    alias $WORK
+}
+
+output "Lenovo Group Limited 0x41A0" {
+    scale 1.25
+    alias $INTERNAL
+} 
+
+profile mobile {
+    output eDP-1 enable scale 1.25
+}
+
+profile docked_work {
+    output $INTERNAL disable
+    output $WORK enable
+}
+
