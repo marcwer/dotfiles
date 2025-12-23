@@ -5,7 +5,7 @@ output "Iiyama North America PL2792Q 1216730912519" {
     alias $WORK
 }
 
-output "Lenovo Group Limited 0x41A0" {
+output "Lenovo Group Limited 0x41A0 Unknown" {
     scale 1.25
     alias $INTERNAL
 } 
